@@ -1,0 +1,20 @@
+# Build & Generated Outputs (applies to root & submodules)
+build/
+.gradle/
+.externalNativeBuild/
+.cxx/
+captures/
+
+# Local Configuration & Secrets
+local.properties
+signing.properties
+
+# IDE & System Files
+/.idea/
+*.iml
+.DS_Store
+
+# Keystores & Security (CRITICAL)
+*.jks
+*.keystore
+*.p12

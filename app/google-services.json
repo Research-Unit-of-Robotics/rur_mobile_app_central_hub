@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "687460444630",
+    "project_id": "rur-app-5e544",
+    "storage_bucket": "rur-app-5e544.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:687460444630:android:6eb20300051eaf19259c77",
+        "android_client_info": {
+          "package_name": "com.example.rur_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKVELgl9DwoqMNQF4eyI6wTEpD5xbWPiI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

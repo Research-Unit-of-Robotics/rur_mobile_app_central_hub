@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="0dp"
+    android:layout_height="180dp"
+    android:layout_margin="8dp"
+    app:layout_columnWeight="1"
+    app:cardBackgroundColor="@android:color/white"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_robot_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/action_buttons_robot"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="ROBOT NAME"
+                android:textColor="@color/accent_yellow"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/action_buttons_robot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/iv_edit_robot"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:padding="6dp"
+                    android:src="@android:drawable/ic_menu_edit"
+                    app:tint="@color/accent_yellow" />
+
+                <ImageView
+                    android:id="@+id/iv_delete_robot"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:padding="4dp"
+                    android:src="@android:drawable/ic_menu_delete"
+                    app:tint="@android:color/holo_red_dark" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/iv_robot_type"
+            android:layout_width="110dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="8dp"
+            android:src="@android:drawable/ic_menu_preferences" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_camera_icon"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="4dp"
+                android:visibility="gone"
+                app:srcCompat="@android:drawable/ic_menu_camera" />
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                app:srcCompat="@android:drawable/ic_lock_idle_charging" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

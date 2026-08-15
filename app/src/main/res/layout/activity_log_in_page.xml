@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#051221"
+    tools:context=".LogInPage">
+
+    <!-- IMAGEN DE FONDO -->
+    <!-- Reemplaza el src con la imagen real de tu evento -->
+    <ImageView
+        android:id="@+id/bg_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.8"
+        android:scaleType="centerCrop"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:isScrollContainer="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- LOGO Y TÍTULO SUPERIOR DERECHO -->
+            <LinearLayout
+                android:id="@+id/logo_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/rur_logo"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="RESEARCH UNIT\nOF ROBOTICS"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- TEXTOS GRANDES CENTRALES -->
+            <TextView
+                android:id="@+id/text_rur"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="80dp"
+                android:text="RUR,"
+                android:textColor="@color/accent_yellow"
+                android:textSize="56sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/logo_container" />
+
+            <TextView
+                android:id="@+id/text_central_hub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:text="CENTRAL HUB"
+                android:textColor="@android:color/white"
+                android:textSize="48sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_rur" />
+
+            <!-- TARJETA DEL FORMULARIO DE LOG IN -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_form"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="48dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="64dp"
+                app:cardBackgroundColor="#F2F4F7"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_central_hub"
+                app:layout_constraintVertical_bias="1.0">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="24dp"
+                    android:paddingTop="32dp"
+                    android:paddingBottom="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="24dp"
+                        android:gravity="center"
+                        android:text="Welcome to the central hub!\nSign in to manage your creations"
+                        android:textColor="#333333"
+                        android:textSize="12sp" />
+
+                    <EditText
+                        android:id="@+id/et_login_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="@android:drawable/editbox_background_normal"
+                        android:drawableEnd="@android:drawable/ic_dialog_email"
+                        android:hint="Email"
+                        android:inputType="textEmailAddress"
+                        android:paddingHorizontal="12dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/et_login_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginBottom="24dp"
+                        android:background="@android:drawable/editbox_background_normal"
+                        android:drawableEnd="@android:drawable/ic_secure"
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:paddingHorizontal="12dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <Button
+                        android:id="@+id/btn_login"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginBottom="16dp"
+                        android:backgroundTint="#0A1B3F"
+                        android:text="Log In"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp"
+                        app:cornerRadius="8dp" />
+
+                    <TextView
+                        android:id="@+id/tv_go_to_register"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="or\nCreate an account"
+                        android:textColor="#333333"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

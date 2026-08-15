@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#051221"
+    tools:context=".MediaGallery">
+
+    <!-- BARRA SUPERIOR -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/accent_yellow"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_header_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Research Unit Of Robotics"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/iv_header_logo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="12dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/rur_logo" />
+    </LinearLayout>
+
+    <!-- TÍTULO Y LÍNEA SEPARADORA -->
+    <LinearLayout
+        android:id="@+id/titleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="24dp"
+        android:paddingBottom="16dp"
+        app:layout_constraintTop_toBottomOf="@id/topBar">
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:letterSpacing="0.05"
+            android:text="MEDIA GALLERY"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <!-- Línea amarilla debajo del título -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/accent_yellow" />
+    </LinearLayout>
+
+    <!-- BOTONES DE FILTRO -->
+    <LinearLayout
+        android:id="@+id/buttonsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingHorizontal="24dp"
+        android:paddingBottom="16dp"
+        android:weightSum="3"
+        app:layout_constraintTop_toBottomOf="@id/titleLayout">
+
+        <Button
+            android:id="@+id/btn_filter_drone"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/accent_yellow"
+            android:text="DRONE"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:cornerRadius="20dp" />
+
+        <Button
+            android:id="@+id/btn_filter_rover"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="4dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/accent_yellow"
+            android:text="ROVER"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:cornerRadius="20dp" />
+
+        <Button
+            android:id="@+id/btn_filter_other"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/accent_yellow"
+            android:text="OTHER"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:cornerRadius="20dp" />
+    </LinearLayout>
+
+    <!-- CONTENEDOR DE LA GALERÍA -->
+    <ScrollView
+        android:id="@+id/mediaScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/bottomBar"
+        app:layout_constraintTop_toBottomOf="@id/buttonsLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.gridlayout.widget.GridLayout
+                android:id="@+id/media_grid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="12dp"
+                app:columnCount="2">
+                <!-- Dynamic cards will be added here -->
+            </androidx.gridlayout.widget.GridLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- BARRA INFERIOR DE NAVEGACIÓN -->
+    <LinearLayout
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/accent_yellow"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageButton
+            android:id="@+id/imageButton4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:scaleType="centerInside"
+            app:srcCompat="@android:drawable/ic_menu_view" />
+
+        <ImageButton
+            android:id="@+id/imageButton5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:scaleType="centerInside"
+            app:srcCompat="@android:drawable/ic_menu_info_details" />
+
+        <ImageButton
+            android:id="@+id/imageButton6"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:scaleType="centerInside"
+            app:srcCompat="@android:drawable/ic_menu_myplaces" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
